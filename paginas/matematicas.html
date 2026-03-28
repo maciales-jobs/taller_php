@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Fibonacci y Factorial</title>
+    <link rel="stylesheet" href="../css/estilo.css">
+</head>
+<body>
+
+<h2>Operaciones Matemáticas</h2>
+
+<form action="../procesos/matematicas.php" method="POST">
+
+    <label>Número:</label>
+    <input type="number" name="numero" required>
+
+    <br><br>
+
+    <label>Operación:</label>
+    <select name="operacion">
+        <option value="fibonacci">Fibonacci</option>
+        <option value="factorial">Factorial</option>
+    </select>
+
+    <br><br>
+
+    <button type="submit">Calcular</button>
+
+</form>
+
+<br>
+<a href="../index.html">Volver</a>
+
+</body>
+</html>
