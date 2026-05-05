@@ -19,7 +19,6 @@ class Media {
 
     public function moda($numeros) {
 
-        // 👇 solución del error
         $numeros = array_map('strval', $numeros);
 
         $conteo = array_count_values($numeros);

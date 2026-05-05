@@ -14,7 +14,6 @@ class Nodo {
 class ArbolBinario {
 
     public function construir($preorden, $inorden) {
-
         if (count($preorden) == 0 || count($inorden) == 0) {
             return null;
         }
@@ -39,9 +38,22 @@ class ArbolBinario {
     public function postorden($nodo) {
         if ($nodo == null) return "";
 
-        return $this->postorden($nodo->izq) .
-               $this->postorden($nodo->der) .
-               $nodo->valor . " ";
+        $izq = $this->postorden($nodo->izq);
+        $der = $this->postorden($nodo->der);
+
+        return trim($izq . " " . $der . " " . $nodo->valor);
+    }
+
+    public function mostrar($nodo, $nivel = 0) {
+        if ($nodo == null) return "";
+
+        $espacios = str_repeat("&nbsp;&nbsp;&nbsp;", $nivel);
+        $salida = $espacios . $nodo->valor . "<br>";
+
+        $salida .= $this->mostrar($nodo->izq, $nivel + 1);
+        $salida .= $this->mostrar($nodo->der, $nivel + 1);
+
+        return $salida;
     }
 }
 ?>
